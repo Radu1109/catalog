@@ -1,11 +1,11 @@
 import functii
 
 '''
-COD BEGINNER FRIENDLY DE REIMPOSPATARE MEMORIE
+COD BEGINNER
 CATALOG DE STUDENTI
-1. Input de la user cu : nume, prenume, nota
-2.Adaugam intr un tabel SQL
-3.Functii: Afisare studenti, cauta dupa nume, calculeaza media studentului/clasei
+1. Input de la user cu : nume, prenume, materii, note
+2.Adaugam intr-o b.d. MYSQL
+3.Functii: Afisare studenti, cauta dupa nume, calculeaza media studentului/clasei,stergere student, manipulare b.d.
 '''
 
 def main():
