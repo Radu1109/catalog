@@ -1,0 +1,45 @@
+# Catalog Studenți - Python + MySQL
+
+Acest proiect este un catalog de studenți simplu, realizat în Python cu MySQL.
+Permite:
+- Adăugarea de studenți
+- Introducerea notelor pe materii
+- Calcularea mediei generale
+- Afișarea informațiilor despre studenți
+- Ștergerea unui student
+
+## Funcționalități
+- Introducere student
+- Introducere nota (per materie)
+- Afișare informații student
+- Calcul nota generală
+- Ștergere student
+
+## Cerințe
+- Python 3.10+
+- MySQL
+- Pachet `mysql-connector-python`
+- Pachet `python-dotenv`
+
+## Instalare
+1. Clonează repo:
+   git clone https://github.com/Radu1109/catalog.git
+2. Crează un mediu virtual (opțional):
+   python -m venv .venv
+3. Instalează dependențele:
+   pip install -r requirements.txt
+4. Creează fișierul `.env` cu datele bazei tale MySQL:
+   DB_HOST=localhost
+   DB_USER=catalog_user
+   DB_PASS=parola_ta
+   DB_NAME=catalog
+5. Rulează:
+   python main.py
+
+## Structura proiectului
+- main.py -> punctul de intrare
+- functii.py -> toate funcțiile pentru manipularea bazei de date
+- .env -> fișier cu date sensibile (nu se urcă pe GitHub)
+- .gitignore -> ignoră fișierele inutile
+
+

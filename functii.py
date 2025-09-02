@@ -17,6 +17,25 @@ db = mysql.connector.connect(
 )
 
 cursor=db.cursor()
+cursor.execute("SHOW DATABASES LIKE 'catalog'")
+result = cursor.fetchone()
+def creare_tabele():
+    query_studenti = ("CREATE TABLE studenti (id_student INT AUTO_INCREMENT PRIMARY KEY, nume VARCHAR(50), prenume VARCHAR(50), nota FLOAT)")
+    cursor.execute(query_studenti)
+    query_note = ("CREATE TABLE note_studenti (id_student INT, M1 float, M2 float, M3 float, M4 float, M5 float, FOREIGN KEY (id_student) REFERENCES studenti(id_student) ON DELETE CASCADE)")
+    cursor.execute(query_note)
+    db.commit()
+
+if result:
+    print("Bun venit la catalogul studentilor")
+    db.database = "catalog"
+else:
+    print("Baza de date nu există. Creăm baza de date...")
+    cursor.execute("CREATE DATABASE catalog")
+    db.database = "catalog"
+    print("Baza de date a fost creată!")
+    creare_tabele()
+    print("Tabelele au fost create!")
 
 
 def creare_student(nume, prenume):
