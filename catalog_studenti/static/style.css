@@ -1,0 +1,54 @@
+body {height: 100vh;
+    margin:0;
+    background-color: aquamarine;}
+
+h1 {text-align: center;
+    margin-top: 30px;
+    font-size: 40px;
+    font-family: 'Times New Roman', Times, serif;
+    height: 700px;}
+
+.container {
+    background-color: aqua;
+    margin: -500px auto 0 auto;
+    text-align: center;
+    padding:20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px;
+    text-align: center;
+    border:solid;
+    height: 200px;
+    width: 300px;}
+select {background-color: blanchedalmond;
+    padding:10px;
+    border-radius: 5px;
+    font-size:15px;}
+.lab1 {font-family: 'Times New Roman', Times, serif;
+    font-size: 30px;}
+.patrat_student{
+    background-color: aqua;
+    margin: 50px auto 0 auto;
+    text-align: center;
+    padding:20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px;
+    text-align: center;
+    border:solid;
+    height:300px;
+    width: 300px;
+}
+
+
+.info-container {
+    background-color: #e0ffff;  /
+    border: 2px solid #00ced1;
+    border-radius: 15px;
+    padding: 20px;
+    margin: 20px auto;
+    width: 80%;
+    max-width: 500px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    font-family: Arial, sans-serif;
+    color: #006666;
+}

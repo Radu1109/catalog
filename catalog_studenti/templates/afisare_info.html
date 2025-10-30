@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Afisare Informatii Student</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Afisare Informatii</h1>
+    <div class="container">
+        <form action="/afisare_info" method="POST">
+            <label for="id_student" class="lab1">Id student</label>
+            <input type="text" id="id_student" name="id_student"><br>
+            <input type="submit" style="font-size: 15px; padding:5px" value="Submit">
+        </form>
+
+        <form action="/" method="GET">
+            <button type="submit">Back Home</button>
+        </form>
+
+    </div>
+    {% if eroare %}
+        <h1 style="color:red">{{ eroare }}</h1>
+    {% endif %}
+    <div class="patrat_student">
+        {% if student %}
+            <p><b>ID:</b>{{ student.id_student }}</p>
+            <p><b>Nume:</b>{{ student.Nume }}</p>
+            <p><b>Prenume:</b>{{ student.Prenume }}</p>
+            <p><b>Nota generala:</b>{{ student.Nota_Generala }}</p>
+            <p><b>Materii si note:</b></p>
+            <ul>
+                {% for materie, nota in student.note.items() %}
+                <li>{{materie}} : {{nota}}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+</body>
+</html>

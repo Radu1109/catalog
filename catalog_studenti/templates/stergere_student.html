@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>'
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Stergere student</h1>
+    <div class="container">
+        <form action="/stergere_student" method="POST">
+            <label for="id_student" class="lab1">Id student</label>
+            <input type="text" id="id_student" name="id_student"><br>
+            <input type="submit" style="font-size: 15px; padding:5px" value="Submit">
+        </form>
+        <form action="/" method="GET">
+            <button type="submit">Back Home</button>
+        </form>
+    </div>
+    <div class="info-container">
+        <h2>*ID-ul studentului este format din primele 7 cifre ale CNP</h2>
+        <h3>*Odata sters, nu se mai pot recupera datele!</h3>
+    </div>
+    {% if eroare %}
+        <h1 style="color:red">{{ eroare }}</h1>
+    {% endif %}
+    {% if mesaj %}
+        <h1 style="color:red">{{ mesaj }}</h1>
+    {% endif %}
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introducere nota</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <h1>Introducere nota</h1>
+    <div class="container">
+        <form action="/adauga_nota" method="POST">
+            <label for="id_student" class="lab1">Id student</label>
+            <input type="text" id="id_student" name="id_student"><br>
+            <label for="materie" class="lab1">Materie:</label><br>
+            <input type="text" id="materie" name="materie"><br>
+            <label for="nota" class="lab1">Nota:</label><br>
+            <input type="text" id="nota" name="nota"><br>
+            <input type="submit" style="font-size: 15px; padding:5px" value="Submit">
+        </form>
+        <form action="/" method="GET">
+            <button type="submit">Back Home</button>
+        </form>
+    </div>
+    <div class="info-container">
+        <h2>*Notele sunt de la 1-10!</h2>
+    </div>
+    {% if eroare %}
+        <h1 style="color:red">{{ eroare }}</h1>
+    {% endif %}
+    {% if nota %}
+        <h1 style="color:red">{{ nota }}</h1>
+    {% endif %}
+</body>
+
+</html>

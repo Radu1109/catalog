@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introducere student</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Introducere student</h1>
+    <div class="container">
+        <form action="/adauga_student" method="POST">
+            <label for="nume" class="lab1">Nume student:</label>
+            <input type="text" id="nume" name="nume"><br>
+            <label for="prenume" class="lab1">Prenume student:</label>
+            <input type="text" id="prenume" name="prenume"><br>
+            <label for="id_student" class="lab1">Id student:</label><br>
+            <input type="text" id="id_student" name="id_student"><br>
+            <input type="submit" style="font-size: 15px; padding:5px" value="Submit">
+        </form>
+        <form action="/" method="GET">
+            <button type="submit">Back Home</button>
+        </form>
+    </div>
+    <div class="info-container">
+        <h2>*ID-ul studentului va fi format din primele 7 cifre ale CNP</h2>
+    </div>
+    {% if eroare %}
+        <h1 style="color:red">{{ eroare }}</h1>
+    {% endif %}
+</body>
+</html>

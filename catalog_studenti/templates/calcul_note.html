@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcul Note Student</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Calcul Note</h1>
+    <div class="container">
+        <form action="/nota_generala" method="POST">
+            <label for="id_student" class="lab1">Id student</label>
+            <input type="text" id="id_student" name="id_student"><br>
+            <input type="submit" style="font-size: 15px; padding:5px" value="Submit">
+            {% if nota %}
+                <h2 style="color:black">Nota:{{ nota }}</h2>
+            {% endif %}
+        </form>
+        <form action="/" method="GET">
+            <button type="submit">Back Home</button>
+        </form>
+    </div>
+    <div class="info-container">
+        <h2>*Nota generala se va calcula doar daca studentul are note la TOATE materiile!</h2>
+    </div>
+    {% if eroare %}
+        <h1 style="color:red">{{ eroare }}</h1>
+    {% endif %}
+
+</body>
+</html>

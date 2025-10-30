@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalog studenti</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <h1>Catalog studenti</h1>
+    <div class="container">
+        <div>
+            <form action="/submit" method="POST">
+            <label for="meniu" class="lab1">Meniu</label><br>
+            <select id="meniu" name="pagina">
+                <option value="introducere_student">Introducere student</option>
+                <option value="introducere_nota">Introducere nota</option>
+                <option value="afisare_info">Afisare informatii</option>
+                <option value="calcul_note">Calcul nota</option>
+                <option value="stergere_student">Stergere student</option>
+            </select><br>
+            <input type="submit" style="font-size: 15px; padding:5px" value="Submit">
+        </form>
+        </div>
+    </div>
+
+</body>
+</html>
